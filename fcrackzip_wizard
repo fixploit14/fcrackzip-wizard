@@ -34,6 +34,9 @@ while true; do
             elif [[ ! -f ${file_wordlist} ]]; then
                 echo "Kesalahan: file ${file_wordlist} tidak ditemukan."
             else
+                echo ""
+                echo "[*] Menjalankan fcrackzip..."
+                echo ""
                 fcrackzip -u -D -p ${file_wordlist} ${file_zip}
                 break
             fi
