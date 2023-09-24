@@ -1,0 +1,43 @@
+#!/bin/bash
+
+clear
+
+cowsay -f tux "Selamat datang di fcrackzip wizard"
+
+deskripsi="fcrackzip wizard merupakan skrip bash sederhana yang dirancang untuk mempermudah penggunaan alat fcrackzip."
+jeda=0.05
+
+for ((i=0; i<${#deskripsi}; i++)); do
+    echo -n "${deskripsi:$i:1}"
+    sleep $jeda
+done
+
+echo -e "\n"
+
+while true; do
+    read -p "[$] Masukkan nama file zip: " file_zip
+    if [[ -z ${file_zip} ]]; then
+        echo "Kesalahan: file zip tidak boleh kosong."
+    elif [[ -d ${file_zip} ]]; then
+        echo "Kesalahan: ${file_zip} itu direktori bukan file."
+    elif [[ -f ${file_zip} && ${file_zip##*.} != "zip" ]]; then
+        echo "Kesalahan: file ${file_zip} bukan file zip."
+    elif [[ ! -f ${file_zip} ]]; then
+        echo "Kesalahan: file ${file_zip} tidak ditemukan."
+    else
+        while true; do
+            read -p "[$] Masukkan nama file wordlist: " file_wordlist
+            if [[ -z ${file_wordlist} ]]; then
+                echo "Kesalahan: file wordlist tidak boleh kosong."
+            elif [[ -d ${file_wordlist} ]]; then
+                echo "Kesalahan: ${file_wordlist} itu direktori bukan file."
+            elif [[ ! -f ${file_wordlist} ]]; then
+                echo "Kesalahan: file ${file_wordlist} tidak ditemukan."
+            else
+                fcrackzip -u -D -p ${file_wordlist} ${file_zip}
+                break
+            fi
+        done
+        break
+    fi
+done
