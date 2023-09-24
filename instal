@@ -1,4 +1,4 @@
 chmod +x fcrackzip_wizard
-cp fcrackzip /usr/bin
+cp fcrackzip_wizard /usr/bin
 echo "[+] Proses instalasi selesai."
 echo "[+] Ketik 'fcrackzip_wizard' untuk menjalankannya."
