@@ -1,3 +1,5 @@
+apt-get update
+apt-get install fcrackzip
 chmod +x fcrackzip_wizard
 cp fcrackzip_wizard /usr/bin
 echo "[+] Proses instalasi selesai."
