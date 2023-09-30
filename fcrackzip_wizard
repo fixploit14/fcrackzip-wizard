@@ -35,7 +35,7 @@ while true; do
                     exit 0
 
                 else
-                    echo ${password}
+                    echo "[+] ${password}"
                     exit 0
                 fi
 
