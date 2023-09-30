@@ -6,23 +6,32 @@ cowsay -f tux "Welcome to fcrackzip wizard."
 
 while true; do
     read -p "[$] Enter the zip file name: " zip
+
     if [[ -z ${zip} ]]; then
         echo "[×] Error: the zip file cannot be empty."
+
     elif [[ -d ${zip} ]]; then
         echo "[×] Error: '${file_zip}' is a directory not a file."
+
     elif [[ -f ${zip} && ${zip##*.} != "zip" ]]; then
         echo "[×] Error: '${zip}' file is not a zip file."
+
     elif [[ ! -f ${zip} ]]; then
         echo "[×] Error: '${zip}' file not found."
+
     else
         while true; do
             read -p "[$] Enter the wordlist file name: " wordlist 
+
             if [[ -z ${wordlist} ]]; then
                 echo "[×] Error: the wordlist file cannot be empty."
+
             elif [[ -d ${wordlist} ]]; then
                 echo "[×] Error: '${wordlist}' is a directory not a file."
+
             elif [[ ! -f ${wordlist} ]]; then
                 echo "[×] Error: '${wordlist}' file not found."
+
             else
                 echo ""
                 echo "[*] Running fcrackzip..."
