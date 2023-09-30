@@ -27,7 +27,18 @@ while true; do
                 echo ""
                 echo "[*] Running fcrackzip..."
                 echo ""
-                fcrackzip -u -D -p ${wordlist} ${zip}
+
+                password=$(fcrackzip -u -D -p ${wordlist} ${zip} | awk "NR == 3")
+
+                if [[ -z $password ]]; then
+                    echo "[×] PASSWORD NOT FOUND!!!!"
+                    exit 0
+
+                else
+                    echo ${password}
+                    exit 0
+                fi
+
                 break
             fi
         done
