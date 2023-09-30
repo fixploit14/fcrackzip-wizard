@@ -27,7 +27,7 @@ while true; do
                 echo ""
                 echo "[*] Running fcrackzip..."
                 echo ""
-                fcrackzip -u -D -p ${file_wordlist} ${file_zip}
+                fcrackzip -u -D -p ${wordlist} ${zip}
                 break
             fi
         done
