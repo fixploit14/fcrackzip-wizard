@@ -2,28 +2,28 @@
 
 clear
 
-cowsay -f tux "Selamat datang di fcrackzip wizard"
+cowsay -f tux "Welcome to fcrackzip wizard."
 
-deskripsi="fcrackzip wizard merupakan skrip bash sederhana yang dirancang untuk mempermudah penggunaan alat fcrackzip."
-jeda=0.05
+des="fcrackzip wizard is a simple bash script designed to make using the fcrackzip tool easier."
+delay=0.05
 
-for ((i=0; i<${#deskripsi}; i++)); do
-    echo -n "${deskripsi:$i:1}"
-    sleep $jeda
+for ((i=0; i<${#des}; i++)); do
+    echo -n "${des:$i:1}"
+    sleep $delay
 done
 
 echo -e "\n"
 
 while true; do
-    read -p "[$] Masukkan nama file zip: " file_zip
-    if [[ -z ${file_zip} ]]; then
-        echo "Kesalahan: file zip tidak boleh kosong."
-    elif [[ -d ${file_zip} ]]; then
-        echo "Kesalahan: ${file_zip} itu direktori bukan file."
-    elif [[ -f ${file_zip} && ${file_zip##*.} != "zip" ]]; then
-        echo "Kesalahan: file ${file_zip} bukan file zip."
+    read -p "[$] Enter the zip file name:: " zip
+    if [[ -z ${zip} ]]; then
+        echo "Error: the zip file cannot be empty."
+    elif [[ -d ${zip} ]]; then
+        echo "Error: '${file_zip}' is a directory not a file."
+    elif [[ -f ${zip} && ${zip##*.} != "zip" ]]; then
+        echo "Error: '${zip}' file is not a zip file."
     elif [[ ! -f ${file_zip} ]]; then
-        echo "Kesalahan: file ${file_zip} tidak ditemukan."
+        echo "Error: '${zip}' file not found."
     else
         while true; do
             read -p "[$] Masukkan nama file wordlist: " file_wordlist
