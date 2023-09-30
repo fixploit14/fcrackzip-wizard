@@ -15,27 +15,27 @@ done
 echo -e "\n"
 
 while true; do
-    read -p "[$] Enter the zip file name:: " zip
+    read -p "[$] Enter the zip file name: " zip
     if [[ -z ${zip} ]]; then
-        echo "Error: the zip file cannot be empty."
+        echo "[×] Error: the zip file cannot be empty."
     elif [[ -d ${zip} ]]; then
-        echo "Error: '${file_zip}' is a directory not a file."
+        echo "[×] Error: '${file_zip}' is a directory not a file."
     elif [[ -f ${zip} && ${zip##*.} != "zip" ]]; then
-        echo "Error: '${zip}' file is not a zip file."
+        echo "[×] Error: '${zip}' file is not a zip file."
     elif [[ ! -f ${file_zip} ]]; then
-        echo "Error: '${zip}' file not found."
+        echo "[×] Error: '${zip}' file not found."
     else
         while true; do
-            read -p "[$] Masukkan nama file wordlist: " file_wordlist
-            if [[ -z ${file_wordlist} ]]; then
-                echo "Kesalahan: file wordlist tidak boleh kosong."
-            elif [[ -d ${file_wordlist} ]]; then
-                echo "Kesalahan: ${file_wordlist} itu direktori bukan file."
+            read -p "[$] Enter the wordlist file name: " wordlist 
+            if [[ -z ${wordlist} ]]; then
+                echo "[×] Error: the wordlist file cannot be empty."
+            elif [[ -d ${wordlist} ]]; then
+                echo "[×] Error: '${wordlist}' is a directory not a file."
             elif [[ ! -f ${file_wordlist} ]]; then
-                echo "Kesalahan: file ${file_wordlist} tidak ditemukan."
+                echo "[×] Error: '${wordlist}' file not found."
             else
                 echo ""
-                echo "[*] Menjalankan fcrackzip..."
+                echo "[*] Running fcrackzip..."
                 echo ""
                 fcrackzip -u -D -p ${file_wordlist} ${file_zip}
                 break
