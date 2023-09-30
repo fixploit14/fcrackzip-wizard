@@ -22,7 +22,7 @@ while true; do
         echo "[×] Error: '${file_zip}' is a directory not a file."
     elif [[ -f ${zip} && ${zip##*.} != "zip" ]]; then
         echo "[×] Error: '${zip}' file is not a zip file."
-    elif [[ ! -f ${file_zip} ]]; then
+    elif [[ ! -f ${zip} ]]; then
         echo "[×] Error: '${zip}' file not found."
     else
         while true; do
