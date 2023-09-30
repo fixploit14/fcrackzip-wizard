@@ -4,16 +4,6 @@ clear
 
 cowsay -f tux "Welcome to fcrackzip wizard."
 
-des="fcrackzip wizard is a simple bash script designed to make using the fcrackzip tool easier."
-delay=0.05
-
-for ((i=0; i<${#des}; i++)); do
-    echo -n "${des:$i:1}"
-    sleep $delay
-done
-
-echo -e "\n"
-
 while true; do
     read -p "[$] Enter the zip file name: " zip
     if [[ -z ${zip} ]]; then
@@ -31,7 +21,7 @@ while true; do
                 echo "[×] Error: the wordlist file cannot be empty."
             elif [[ -d ${wordlist} ]]; then
                 echo "[×] Error: '${wordlist}' is a directory not a file."
-            elif [[ ! -f ${file_wordlist} ]]; then
+            elif [[ ! -f ${wordlist} ]]; then
                 echo "[×] Error: '${wordlist}' file not found."
             else
                 echo ""
