@@ -2,13 +2,24 @@
 
 clear
 
-cowsay -f tux "Welcome to fcrackzip wizard."
+# cowsay -f tux "Welcome to fcrackzip wizard."
 
 r="\e[1;31m"
 g="\e[1;32m"
 b="\e[1;34m"
 re="\e[0m"
 w="\e[1;37m"
+
+
+echo ""
+echo ".___ __ .__ .__. __ .  ..___.._..__"
+echo "[__ /  `[__)[__]/  `|_/   _/  | [__)"
+echo "|   \__.|  \|  |\__.|  \./__._|_|"   
+echo ""                                
+echo ".  .._..___..__..__ .__"             
+echo "|  | |   _/ [__][__)|  \"            
+echo "|/\|_|_./__.|  ||  \|__/"            
+echo ""                                    
 
 while true; do
     read -p $'\e[1;36m[#] \e[1;37mEnter the zip file name: ' zip
