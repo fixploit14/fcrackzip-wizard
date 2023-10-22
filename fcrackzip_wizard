@@ -25,21 +25,21 @@ while true; do
             read -p "[$] Enter the wordlist file name: " wordlist 
 
             if [[ -z ${wordlist} ]]; then
-                echo "[×] Error: the wordlist file cannot be empty."
+                echo -e "${r}[×] ${w}Error: the wordlist file cannot be empty.${re}"
             elif [[ -d ${wordlist} ]]; then
-                echo "[×] Error: '${wordlist}' is a directory not a file."
+                echo -e "${r}[×] ${w}Error: '${wordlist}' is a directory not a file.${re}"
             elif [[ ! -f ${wordlist} ]]; then
-                echo "[×] Error: '${wordlist}' file not found."
+                echo -e "${r}[×] ${w}Error: '${wordlist}' file not found.${re}"
             else
                 echo ""
-                echo "[*] Running fcrackzip..."
+                echo -e "${b}[*] ${w}Running fcrackzip...${re}"
                 echo ""
                 password=$(fcrackzip -u -D -p ${wordlist} ${zip} | awk "NR == 3")
                 if [[ -z $password ]]; then
-                    echo "[×] PASSWORD NOT FOUND!!!!"
+                    echo -e "${r}[×] ${w}PASSWORD NOT FOUND!!!!${re}"
                     exit 0
                 else
-                    echo "[+] ${password}"
+                    echo -e "${g}[+] ${w}${password}${re}"
                     exit 0
                 fi
                 break
