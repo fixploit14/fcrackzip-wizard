@@ -34,7 +34,7 @@ while true; do
     elif [[ ! -f ${zip} ]]; then
         echo -e "${r}[x] ${w}Error: '${zip}' file not found.${re}"
     else
-        echo -e "${w}Zip file ${r}-> ${g}${zip}${re}"
+        echo -e "${g}[+] ${w}Zip file ${r}-> ${g}${zip}${re}"
         while true; do
             read -p $'\e[1;36m[#] \e[1;37mEnter the wordlist file name: ' wordlist 
 
@@ -45,6 +45,7 @@ while true; do
             elif [[ ! -f ${wordlist} ]]; then
                 echo -e "${r}[x] ${w}Error: '${wordlist}' file not found.${re}"
             else
+                echo -e "${g}[+] ${w}Wordlist file ${r}-> ${g}${wordlist}${re}"
                 echo ""
                 echo -e "${b}[*] ${w}Running fcrackzip...${re}"
                 echo ""
