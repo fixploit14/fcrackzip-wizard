@@ -4,10 +4,16 @@ clear
 
 cowsay -f tux "Welcome to fcrackzip wizard."
 
+r="\e[1;31m"
+g="\e[1;32m"
+b="\e[1;34m"
+re="\e[0m"
+w="\e[1;37m"
+
 while true; do
     read -p "[$] Enter the zip file name: " zip
     if [[ -z ${zip} ]]; then
-        echo "[×] Error: the zip file cannot be empty."
+        echo -e "${r}[×] ${w}Error: the zip file cannot be empty.${re}"
     elif [[ -d ${zip} ]]; then
         echo "[×] Error: '${file_zip}' is a directory not a file."
     elif [[ -f ${zip} && ${zip##*.} != "zip" ]]; then
