@@ -13,30 +13,30 @@ w="\e[1;37m"
 while true; do
     read -p $'\e[1;36m[#] \e[1;37mEnter the zip file name: ' zip
     if [[ -z ${zip} ]]; then
-        echo -e "${r}[×] ${w}Error: the zip file cannot be empty.${re}"
+        echo -e "${r}[x] ${w}Error: the zip file cannot be empty.${re}"
     elif [[ -d ${zip} ]]; then
-        echo -e "${r}[×] ${w}Error: '${file_zip}' is a directory not a file.${re}"
+        echo -e "${r}[x] ${w}Error: '${file_zip}' is a directory not a file.${re}"
     elif [[ -f ${zip} && ${zip##*.} != "zip" ]]; then
-        echo -e "${r}[×] ${w}Error: '${zip}' file is not a zip file.${re}"
+        echo -e "${r}[x] ${w}Error: '${zip}' file is not a zip file.${re}"
     elif [[ ! -f ${zip} ]]; then
-        echo -e "${r}[×] ${w}Error: '${zip}' file not found.${re}"
+        echo -e "${r}[x] ${w}Error: '${zip}' file not found.${re}"
     else
         while true; do
             read -p $'\e[1;36m[#] \e[1;37mEnter the wordlist file name: ' wordlist 
 
             if [[ -z ${wordlist} ]]; then
-                echo -e "${r}[×] ${w}Error: the wordlist file cannot be empty.${re}"
+                echo -e "${r}[x] ${w}Error: the wordlist file cannot be empty.${re}"
             elif [[ -d ${wordlist} ]]; then
-                echo -e "${r}[×] ${w}Error: '${wordlist}' is a directory not a file.${re}"
+                echo -e "${r}[x] ${w}Error: '${wordlist}' is a directory not a file.${re}"
             elif [[ ! -f ${wordlist} ]]; then
-                echo -e "${r}[×] ${w}Error: '${wordlist}' file not found.${re}"
+                echo -e "${r}[x] ${w}Error: '${wordlist}' file not found.${re}"
             else
                 echo ""
                 echo -e "${b}[*] ${w}Running fcrackzip...${re}"
                 echo ""
                 password=$(fcrackzip -u -D -p ${wordlist} ${zip} | awk "NR == 3")
                 if [[ -z $password ]]; then
-                    echo -e "${r}[×] ${w}PASSWORD NOT FOUND!!!!${re}"
+                    echo -e "${r}[x] ${w}PASSWORD NOT FOUND!!!!${re}"
                     exit 0
                 else
                     echo -e "${g}[+] ${w}${password}${re}"
