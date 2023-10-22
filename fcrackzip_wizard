@@ -20,7 +20,9 @@ echo -e "| ${b}╦ ╦  ╦  ╔═╗  ╔═╗  ╦═╗  ╔╦╗         
 echo -e "| ${b}║║║  ║  ╔═╝  ╠═╣  ╠╦╝   ║║                ${w}|"            
 echo -e "| ${b}╚╩╝  ╩  ╚═╝  ╩ ╩  ╩╚═  ═╩╝                ${w}|"                                                
 echo -e "+===========================================+"
-echo -e "                                 ${w}[${y}FIXPLOIT14${w}]${re}"
+echo -e "                                 ${w}[${y}FIXPLOIT14${w}]"
+echo -e "${re}"
+
 while true; do
     read -p $'\e[1;36m[#] \e[1;37mEnter the zip file name: ' zip
     if [[ -z ${zip} ]]; then
