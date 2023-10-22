@@ -11,7 +11,7 @@ re="\e[0m"
 w="\e[1;37m"
 
 while true; do
-    read -p $'\e[1;36m[$] \e[1;37mEnter the zip file name: ' zip
+    read -p $'\e[1;36m[#] \e[1;37mEnter the zip file name: ' zip
     if [[ -z ${zip} ]]; then
         echo -e "${r}[×] ${w}Error: the zip file cannot be empty.${re}"
     elif [[ -d ${zip} ]]; then
@@ -22,7 +22,7 @@ while true; do
         echo -e "${r}[×] ${w}Error: '${zip}' file not found.${re}"
     else
         while true; do
-            read -p "[$] Enter the wordlist file name: " wordlist 
+            read -p $'\e[1;36m[#] \e[1;37mEnter the wordlist file name: ' wordlist 
 
             if [[ -z ${wordlist} ]]; then
                 echo -e "${r}[×] ${w}Error: the wordlist file cannot be empty.${re}"
