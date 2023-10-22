@@ -15,11 +15,11 @@ while true; do
     if [[ -z ${zip} ]]; then
         echo -e "${r}[×] ${w}Error: the zip file cannot be empty.${re}"
     elif [[ -d ${zip} ]]; then
-        echo "[×] Error: '${file_zip}' is a directory not a file."
+        echo -e "${r}[×] ${w}Error: '${file_zip}' is a directory not a file.${re}"
     elif [[ -f ${zip} && ${zip##*.} != "zip" ]]; then
-        echo "[×] Error: '${zip}' file is not a zip file."
+        echo -e "${r}[×] ${w}Error: '${zip}' file is not a zip file.${re}"
     elif [[ ! -f ${zip} ]]; then
-        echo "[×] Error: '${zip}' file not found."
+        echo -e "${r}[×] ${w}Error: '${zip}' file not found.${re}"
     else
         while true; do
             read -p "[$] Enter the wordlist file name: " wordlist 
