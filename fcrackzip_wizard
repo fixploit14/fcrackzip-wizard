@@ -45,7 +45,7 @@ while true; do
             elif [[ ! -f ${wordlist} ]]; then
                 echo -e "${r}[x] ${w}Error: '${wordlist}' file not found.${re}"
             else
-                echo -e "${g}[+] ${w}Wordlist file ${r}-> ${g}${wordlist} [${pc} passwords]${re}"
+                echo -e "${g}[+] ${w}Wordlist file ${r}-> ${g}${wordlist} ${w}[${pc} passwords]${re}"
                 echo ""
                 echo -e "${b}[*] ${w}Running fcrackzip...${re}"
                 echo ""
