@@ -34,6 +34,7 @@ while true; do
     elif [[ ! -f ${zip} ]]; then
         echo -e "${r}[x] ${w}Error: '${zip}' file not found.${re}"
     else
+        echo -e "${w}Zip file ${r}-> ${g}${zip}${re}"
         while true; do
             read -p $'\e[1;36m[#] \e[1;37mEnter the wordlist file name: ' wordlist 
 
@@ -52,11 +53,13 @@ while true; do
                     echo -e "${r}[x] ${w}PASSWORD NOT FOUND!!!!${re}"
                     echo ""
                     read -p $'\e[1;37mPress any key to exit...\e[0m' e
+                    clear
                     exit 0
                 else
                     echo -e "${g}[+] ${w}${password}${re}"
                     echo ""
                     read -p $'\e[1;37mPress any key to exit...\e[0m' e
+                    clear 
                     exit 0
                 fi
                 break
