@@ -50,9 +50,13 @@ while true; do
                 password=$(fcrackzip -u -D -p ${wordlist} ${zip} | awk "NR == 3")
                 if [[ -z $password ]]; then
                     echo -e "${r}[x] ${w}PASSWORD NOT FOUND!!!!${re}"
+                    echo ""
+                    read -p $'\e[1;37mPress any key to exit...\e[0m' e
                     exit 0
                 else
                     echo -e "${g}[+] ${w}${password}${re}"
+                    echo ""
+                    read -p $'\e[1;37mPress any key to exit...\e[0m' e
                     exit 0
                 fi
                 break
