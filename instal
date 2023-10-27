@@ -1,7 +1,13 @@
+#!/bin/bash
+# instal
+
+c="\e[1;36m"
+e="\e[0m"
+
 apt-get update
 apt-get install fcrackzip
 apt-get install cowsay
 chmod +x fcrackzip_wizard
 cp fcrackzip_wizard /usr/bin
-echo "[•] The installation process is complete"
-echo "[•] Type 'fcrackzip_wizard' to run it."
+echo -e "${c}[•] ${e}The installation process is complete"
+echo -e "${c}[•] ${e}Type 'fcrackzip_wizard' to run it."
